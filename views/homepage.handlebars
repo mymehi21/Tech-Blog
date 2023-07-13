@@ -1,0 +1,21 @@
+<style>
+  ol {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: grey;
+    font-size: larger;
+    font-weight: bold;
+  }
+</style>
+<ol class="post-list">
+  {{#each posts as |post|}}
+  <li>
+    {{> post-info post }}
+  </li>
+  <br><br>
+  {{/each}}
+</ol>

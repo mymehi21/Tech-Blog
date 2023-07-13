@@ -1,0 +1,118 @@
+<style>
+  a {
+    text-decoration: none;
+    color: grey;
+    font-size: larger;
+    font-weight: bold;
+  }
+
+  .brown-button {
+    margin: 10px;
+    width: 100%;
+    max-width: 200px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #362B20;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  ol {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  section {
+    color: #362B20;
+  }
+
+  /* Responsive Styles */
+  .new-post-form {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    padding: 1rem;
+  }
+
+  .new-post-form div {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 10px;
+  }
+
+  input[type="text"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #362B20;
+    background-color: #fff;
+    color: #362B20;
+  }
+
+  button[type="submit"] {
+    width: 100%;
+    max-width: 200px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #362B20;
+    color: #fff;
+    cursor: pointer;
+  }
+
+      .card {
+        max-width: 550px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+        border: 0.25rem solid #362B20;
+        margin-top: 20px;
+    }
+
+        .create-title {
+        background-color: #362B20;
+        color: #fff;
+        font-size: x-large;
+        padding: 10px;
+    }
+</style>
+
+<section>
+  <div class="card">
+     <div class="create-title">Create New Post</div>
+
+  <form class="new-post-form">
+    <div>
+      <label for="post-title">Title</label>
+      <input type="text" id="post-title" name="post-title" />
+    </div>
+
+    <div>
+      <label for="post-body">Body</label>
+      <textarea id="post-body" name="post-body"></textarea>
+    </div>
+
+    <button type="submit" class="btn">Create</button>
+  </form>
+  </div>
+  
+</section>
+
+{{#if posts.length}}
+<section>
+  <h2>Your Posts</h2>
+  <ol>
+    {{#each posts as |post|}}
+    <li>
+      {{> post-info post}}
+      <button class="brown-button" onclick="window.location.href='/dashboard/edit/{{post.id}}'">
+        Edit post
+      </button>
+    </li>
+    {{/each}}
+  </ol>
+</section>
+{{/if}}
+
+<script src="/javascript/add-post.js"></script>

@@ -1,0 +1,123 @@
+<style>
+  ol {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  article,
+  a {
+    color: #362B20;
+  }
+
+  /* Responsive Styles */
+  .edit-post-form {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+  }
+
+  .edit-post-form div {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 10px;
+  }
+
+  input[type="text"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #362B20;
+    background-color: #fff;
+    color: #362B20;
+  }
+
+  button[type="submit"],
+  button[type="button"] {
+    width: 100%;
+    max-width: 200px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #362B20;
+    color: #fff;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+
+  .row-btn {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .justify-space {
+    justify-content: space-between;
+    display: flex;
+    background-color: #362B20;
+    padding: 10px
+  }
+
+  .title {
+    border: 0.25rem solid #362B20;
+    margin-top: 20px;
+  }
+
+  .body-content {
+    padding: 10px;
+    color: black
+  }
+
+  h2 {
+    color: #fff;
+  }
+
+  .comment-form {
+    width: 30%;
+  }
+</style>
+<article>
+  <a href="/dashboard"> &larr; Back to dashboard</a>
+
+  <div class="title">
+    <div class="justify-space">
+      <h2>
+        Edit Post
+      </h2>
+    </div>
+    <div class="body-content">
+      <form class="edit-post-form">
+        <div>
+          <p>Edit Title</p>
+          <input name="post-title" type="text" value="{{post.title}}" />
+
+        </div>
+        <div>
+          <p>Edit Body</p>
+          <textarea name="post-body">{{post.body}}</textarea>
+        </div>
+        <div>
+          Posted by you on {{format_date post.created_at}}
+          |
+          <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
+        </div>
+        <div class="row-btn">
+          <button type="submit">Save post</button>
+          <button type="button" class="delete-post-btn">Delete post</button>
+        </div>
+      </form>
+</article>
+<br>
+<form class="comment-form">
+  <div>
+    <textarea name="comment-body"></textarea>
+  </div>
+
+  <div>
+    <button type="submit">Add Comment</button>
+  </div>
+  <br>
+</form>
+
+<script src="/javascript/edit-post.js"></script>
+<script src="/javascript/delete-post.js"></script>
+<script src="/javascript/comment.js"></script>

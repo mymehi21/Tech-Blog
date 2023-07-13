@@ -1,0 +1,84 @@
+<style>
+    a {
+        color: #362B20;
+    }
+
+    .login-form,
+    .signup-form {
+        color: #362B20;
+        width: 100%;
+    }
+
+    .card {
+        max-width: 550px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+        border: 0.25rem solid #362B20;
+        margin-top: 20px;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    textarea {
+        width: 90%;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #362B20;
+        background-color: #fff;
+        color: #362B20;
+    }
+
+    button[type="submit"],
+    button[type="button"] {
+        width: 100%;
+        max-width: 200px;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #362B20;
+        color: #fff;
+        cursor: pointer;
+        margin-right: 10px;
+    }
+
+    .title {
+        background-color: #362B20;
+        color: #fff;
+        font-size: x-large;
+        padding: 10px;
+    }
+
+
+    .login-form,
+    .signup-form {
+        padding: 20px;
+    }
+</style>
+
+<div class="card">
+<div id="signup-form-wrapper">
+        <div class="title">Sign Up Form</div>
+        <form class="signup-form" id="signup-form">
+            <div>
+                <label for="username-signup">Username:</label><br>
+                <input type="text" id="username-signup" />
+            </div><br>
+            <div>
+                <label for="email-signup">Email:</label><br>
+                <input type="text" id="email-signup" />
+            </div><br>
+            <div>
+                <label for="password-signup">Password:</label><br>
+                <input type="password" id="password-signup" />
+            </div><br>
+            <div>
+                <button type="submit">Signup</button>
+            </div>
+            <div>
+                <p>Already have an account? <a href="/login">Login</a></p>
+            </div>
+        </form>
+    </div>
+</div>
+
+    <script src="/javascript/login.js"></script>

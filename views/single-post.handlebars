@@ -1,0 +1,52 @@
+<style>
+  a {
+    text-decoration: none;
+    color: grey;
+    font-size: larger;
+    font-weight: bold;
+  }
+
+  input[type="text"],
+  textarea {
+    width: 30%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #362B20;
+    background-color: #fff;
+    color: #362B20;
+  }
+
+  button[type="submit"] {
+    width: 100%;
+    max-width: 200px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #362B20;
+    color: #fff;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+</style>
+
+{{> post-info post}}
+<br>
+
+{{#if loggedIn}}
+<form class="comment-form">
+  <div>
+    <textarea name="comment-body"></textarea>
+  </div>
+  <div>
+    <button type="submit">Add Comment</button>
+  </div>
+</form>
+<br>
+{{/if}}
+
+{{> comments post.comments}}
+
+
+{{#if loggedIn}}
+<script src="/javascript/comment.js"></script>
+{{/if}}
